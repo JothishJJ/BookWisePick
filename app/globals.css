@@ -2,6 +2,7 @@
 @tailwind components;
 @tailwind utilities;
 
+/* Utility Classes */
 @layer utilities {
   .text-balance {
     text-wrap: balance;
