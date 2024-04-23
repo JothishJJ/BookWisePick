@@ -10,17 +10,18 @@
   },
   "dependencies": {
     "react": "^18",
-    "react-dom": "^18",
-    "next": "14.2.2"
+    "react-dom": "^18"
   },
   "devDependencies": {
-    "typescript": "^5",
     "@types/node": "^20",
     "@types/react": "^18",
     "@types/react-dom": "^18",
+    "cypress": "^13.8.0",
+    "eslint": "^8",
+    "eslint-config-next": "14.2.2",
+    "next": "^14.2.2",
     "postcss": "^8",
     "tailwindcss": "^3.4.1",
-    "eslint": "^8",
-    "eslint-config-next": "14.2.2"
+    "typescript": "^5"
   }
 }
