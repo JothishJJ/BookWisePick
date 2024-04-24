@@ -13,7 +13,8 @@
   "dependencies": {
     "@auth/prisma-adapter": "^2.0.0",
     "@prisma/client": "^5.12.1",
-    "next-auth": "^5.0.0-beta.16",
+    "@testing-library/cypress": "^10.0.1",
+    "cypress-social-logins": "^1.14.1",
     "react": "^18",
     "react-dom": "^18"
   },

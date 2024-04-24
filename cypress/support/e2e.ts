@@ -16,5 +16,17 @@
 // Import commands.js using ES2015 syntax:
 import './commands'
 
+// @ts-ignore
+Cypress.Commands.add('stubLogin', () => {
+  cy.intercept("/api/auth/session", { fixture: 'auth-session.json' }).as(
+    'session',
+  )
+
+  cy.setCookie('next-auth.session-token', 'a valid cookie from your browser session')
+
+  cy.visit('/app')
+  cy.wait('@session')
+})
+
 // Alternatively you can use CommonJS syntax:
 // require('./commands')

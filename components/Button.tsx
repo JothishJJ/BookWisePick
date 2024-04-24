@@ -11,7 +11,7 @@ const Button = (props: React.ComponentProps<"button"> & ButtonProps) => {
 
     if (props.styleType === "secondary") {
         return (
-            <button className={props.className + " p-2 border-black border-2 bg-black text-white rounded-lg"} {...restProps}></button>
+            <button className={props.className + "p-2 border-black border-2 bg-black text-white rounded-lg"} {...restProps}></button>
         )
     }
 
