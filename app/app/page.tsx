@@ -1,3 +1,10 @@
+import type { Metadata } from "next";
+
+export const metadata: Metadata = {
+  title: "App | BoookWisePick",
+};
+
+
 const App = async () => {
 
   return (
