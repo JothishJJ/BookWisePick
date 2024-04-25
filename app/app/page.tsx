@@ -1,7 +1,6 @@
 import Button from "@/components/Button";
 import type { Metadata } from "next";
 import Link from "next/link";
-import { Suspense } from "react";
 import Image from "next/image";
 
 export const metadata: Metadata = {
@@ -11,13 +10,13 @@ export const metadata: Metadata = {
 
 const App = async () => {
 
-  const response = await fetch(`http://openlibrary.org/subjects/fiction.json`)
+  const response = await fetch(`http://openlibrary.org/subjects/fiction.json?sort=rating asc`)
   const bookData = await response.json()
 
-  const financeResponse = await fetch('https://openlibrary.org/subjects/finance.json')
+  const financeResponse = await fetch('https://openlibrary.org/subjects/finance.json?sort=rating asc')
   const financeBookData = await financeResponse.json()
 
-  const nonFictionResponse = await fetch('https://openlibrary.org/subjects/non-fiction.json')
+  const nonFictionResponse = await fetch('https://openlibrary.org/subjects/non-fiction.json?sort=rating asc')
   const nonFictionData = await nonFictionResponse.json()
 
   return (
@@ -55,7 +54,7 @@ const App = async () => {
 
         {/* Non Fiction*/}
         <div data-cy="non-fiction-category">
-          <h3>Finance</h3>
+          <h3>Non-Fiction</h3>
           <hr className="border-black" />
           <div className="flex gap-8 overflow-x-auto">
             {nonFictionData && nonFictionData.works.map((work: any) => {

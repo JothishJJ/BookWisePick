@@ -10,7 +10,7 @@ const Search = () => {
   async function getBooks(e: any) {
     e.preventDefault()
 
-    const response = await fetch(`https://openlibrary.org/search.json?q=${bookTitle}&limit=20`)
+    const response = await fetch(`https://openlibrary.org/search.json?q=${bookTitle}&limit=20&sort=rating asc`)
     const obj = await response.json()
     setBooks(obj)
   }
@@ -44,7 +44,7 @@ const Search = () => {
                     <p className="font-semibold">{book.title}</p>
                     <Image src={`https://covers.openlibrary.org/b/id/${book.cover_i}-L.jpg`} alt="Book Cover" width={200} height={400} />
                     <p>By {book.author_name?.[0] ?? "No Author found"}</p>
-                    {/* Add tags by categories */}
+                    {/* TODO: Add tags by categories */}
                   </div>
                 )
               })}
