@@ -5,35 +5,35 @@ import { useState } from "react"
 
 const Search = () => {
 
-  const [books, setBooks] = useState<any>()
+  const [books, setBooks] = useState<any>();
 
   async function getBooks(e: any) {
-    e.preventDefault()
+    e.preventDefault();
 
-    const response = await fetch(`https://openlibrary.org/search.json?q=${bookTitle}&limit=20&sort=rating asc`)
-    const obj = await response.json()
-    setBooks(obj)
+    const response = await fetch(`https://openlibrary.org/search.json?q=${bookTitle}&limit=20&sort=rating asc`);
+    const obj = await response.json();
+    setBooks(obj);
   }
 
   const [bookTitle, setBookTitle] = useState("")
 
   return (
     <div className="text-center">
-      <form autoComplete="off" className="fixed top-20 right-0 left-0 space-x-8" >
+      <form autoComplete="off" className="space-x-8" >
         <input
-          autoComplete="false"
+          autoComplete="off"
           data-cy="search-bar"
           type="search"
           name="search"
           placeholder="Search a Book"
           value={bookTitle}
           onChange={(e) => setBookTitle(e.target.value)}
-          className="border-2 border-black p-2 rounded-xl outline-none w-96"
+          className="border-2 border-black p-2 rounded-xl outline-none w-96 my-4"
         />
         <Button data-cy="search" className="px-4" onClick={getBooks}>Search</Button>
       </form>
 
-      <div className="pt-16 lg:px-80 px-4">
+      <div className="lg:px-80 px-4">
         {books && (
           <>
             <p className="text-right">Found {books.numFound} books!</p>
